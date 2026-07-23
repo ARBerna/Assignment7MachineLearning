@@ -57,6 +57,13 @@ def main():
        [70.01, 136.46],
        [67.90, 112.37],
        [66.49, 127.45],
+
+       #5 added points
+       [64.00, 115.00],
+       [72.00, 150.00],
+       [70.50, 140.00],
+       [68.00, 130.00],
+       [66.00, 120.00]
     ]
     
     # Question:
@@ -83,6 +90,13 @@ def main():
        [29, 0],
        [31, 0],
        [45, 0],
+
+       #5 added points
+       [33, 0],
+       [20, 1],
+       [40, 0],
+       [24, 1],
+       [28, 0]
     ]
     # Question:
     # Given the data we have, does a 33 year old like pineapples on their pizza?
@@ -90,6 +104,9 @@ def main():
     clf_k_nearest_neighbors, clf_prediction = knn(
         clf_data, clf_query, k=3, distance_fn=euclidean_distance, choice_fn=mode
     )
+
+    print("Regression prediction (weight for 60 inches):", reg_prediction)
+    print("Classification prediction (pineapple for age 33):", clf_prediction)
 
 if __name__ == '__main__':
     main()
